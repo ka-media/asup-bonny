@@ -1,0 +1,342 @@
+*{
+     margin: 0;
+     padding: 0;
+}
+
+:root {
+     --blue: #287bff;
+     --white: #fff;
+     --grey: #f5f5f5;
+     --black1: #000;
+     --black2: #999;
+     --green: #148f06;
+     --success: #0df519;
+     --background: #deeec1;
+}
+
+body, html {
+     height: 100%;
+}
+
+body {
+    background: var(--background);
+}
+html {
+     font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+     display: block;
+     position: fixed;
+     z-index: 2;
+     top: 0;
+     left: 0;
+     padding: 10px;
+     width: 100%;
+     background: var(--white);
+}
+
+header .head-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+ }
+
+header .head-container img {
+     width: 50px;
+}
+
+nav a:visited,
+nav a:link {
+     color: var(--green);
+     text-decoration: none;
+}
+
+nav > ul {
+     display: inline;
+     padding: 0;
+}
+
+nav > ul > li {
+     display: inline-block;
+     list-style: none;
+     margin: 0 5px 0 5px;
+     text-decoration: none;
+} 
+
+.header-line {
+     margin: 0;
+     border:5px solid var(--green);
+     color: var(--green);
+}
+
+main {
+     display: block;
+     padding-top: 2em;
+     padding-bottom: 3em;
+     min-height: 85%;
+}
+
+article {
+     padding: 0em;
+     width: 100%;
+}
+
+article img {
+     width: 100%;
+}
+
+article p { 
+     text-align: justify;  
+     margin: 0.5em 0 0.5em 0;
+}
+
+/* Carousel Styles*/
+
+.carousel-caption {
+     bottom: 3rem;
+     z-index: 10;
+}
+
+.carousel-caption h1 {
+     position: relative;
+     z-index: 0;
+     font-weight: bold;
+     text-shadow: 1px 3px 1px var(--black1);
+     color: var(--white);
+     text-align: center;
+}
+
+.carousel-caption p {
+     color: var(--white);
+     margin: 0.5em 0 0.5em 0;
+     text-align: center;
+     text-shadow: 1px 3px 1px var(--black1);
+}
+
+.carousel-item {
+     height: 32rem;
+     max-width: 100vw;
+     background-size: cover;
+     background-position: center center;
+     background-repeat: no-repeat;
+}
+
+#welcomeCarousel {
+     z-index: 0;
+     margin-top: 5em;
+}
+
+.welcome-carousel-image1 {
+     box-shadow: inset 0 0 100vw rgba(0, 0, 0, 0.3);
+     background-image: url('public/img/asupexco.jpg');
+}
+
+.welcome-carousel-image2 {
+     box-shadow: inset 0 0 100vw rgba(0, 0, 0, 0.3);
+     background-image: url('public/img/asupman.jpg');
+}
+
+.welcome-carousel-image3 {
+     box-shadow: inset 0 0 100vw rgba(0, 0, 0, 0.3);
+     background-image: url('public/img/asupgov.jpg');
+}
+
+/* Carousel Style End */
+
+h2 {
+     margin-top: 4em;
+     font-weight: bold;
+     color: var(--green);
+     text-align: center;
+}
+
+.short-msg h2 {
+     margin-top: 1em;
+}
+
+.author {
+     text-decoration: none;
+}
+
+.potrait img {
+     display: block;
+     width: 50%;
+     margin-left: 23%;
+     margin-top: 5em;
+     margin-bottom: 0;
+     border-radius: 50%;
+     box-shadow: 1px 1px 20px 1px;
+} 
+
+h3 {
+    color: #a52a2a;
+    text-align: center;
+ }
+
+.container a:link {
+     text-decoration: none;
+}
+
+#pub-date, #p-date {
+     color: var(--black2);
+}
+
+.min-container {
+     width: 100%;
+     margin-left: 0;
+     margin-top: 0;
+}
+
+.foo-container {
+     margin: 2em;
+}
+
+.about-container {
+     position: relative;
+     margin-top: 2em;
+     background-color: var(--white);
+     box-shadow: 0 7px 25px var(--black2);
+}
+
+.about-container .about-banner img {
+     width: 25%;
+     margin-left: 37%;
+}
+
+[src="public/img/asupexco.jpg"] {
+     width: 100%;
+     box-shadow: 0 7px 25px var(--black1);
+}
+
+[src="public/img/fpoglogo.jpg"] {
+     width: 25%;
+     margin-left: 37%;
+     border-radius: 50%;
+}
+
+.about-container, .min-container p {
+     color: var(--green);
+     padding: 10px;
+}
+
+/* Executive About Page */
+.profile-container {
+     margin: 1em; 
+     margin-top: 0em;
+}
+
+.profile-container h2 {
+     text-align: left;
+}
+
+.profile-image-wrapper {
+     float: left; 
+     width: 25%; 
+     margin: 10px;
+     box-shadow: 1px 1px 2px 1px #000;
+}
+
+.profile-title p, .link-link {
+     text-align: center;
+}
+
+@media screen and (min-width: 678px) {
+     .profile-container {
+     width: 50%; 
+     margin-left: 25%;
+     }
+}
+
+/* Executive styles ends */
+
+min-container p {
+     color: var(--green);
+     padding: 10px;
+}
+
+.about-main-child {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: space-around;
+}
+
+input {
+     margin-bottom: 5px;
+}
+
+.login {
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-end;
+     margin-top: 3em;
+     margin-right: 0.5em;
+}
+
+button {
+     margin-top: 1em;
+}
+
+.log-container button {
+     margin-top: 5em;
+     margin-bottom: 3em;
+}
+
+.msg {
+     background-color: #f82a0f;
+     font-size: 1.2em;
+     color: #fff;
+     width: 50%;
+     margin-left: 25%;
+     margin-bottom: 5px;
+     text-align: center;
+}
+
+.success {
+     background-color: #10dd76;
+     font-size: 1.2em;
+     color: #fff;
+     width: 50%;
+     margin-left: 25%;
+     margin-bottom: 5px;
+     text-align: center;
+}
+
+.link-link {
+     color: var(--green);
+     font-weight: bold;
+     text-align: center;
+     margin-top: 2em;
+}
+
+.links-line {
+     width: 50%;
+     margin-left: 25%;
+}
+
+footer {
+     padding: 10px;
+     text-align: center;
+}
+
+footer p, hr {
+     color: var(--green);
+}
+
+@media screen and (min-width: 678px) {
+     .carousel-caption h1 {
+          width: 100%;
+          margin-top: 1em;
+          margin-bottom: 1em;
+          color: var(--white);
+          text-align: center;
+     }
+
+     .min-container {
+          width: 35%;
+          margin-left: 32%;
+          margin-top: 0;
+     }
+}
+

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Login</title>
+     <link rel="icon" type="image/x-icon" href="public/img/ASUP-logo.png" />
+     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.5/JsBarcode.all.min.js" integrity="sha512-QEAheCz+x/VkKtxeGoDq6nsGyzTx/0LMINTgQjqZ0h3+NjP+bCsPYz3hn0HnBkGmkIFSr7QcEZT+KyEM7lbLPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+     <link rel="stylesheet" href="public/css/styles.css">
+</head>
+
+<body>
+     <header>
+          <div class="head-container">
+               <div class="logo">
+                    <img src="public/img/ASUP-logo.png" alt="ASUP Logo">
+               </div>
+               <!--<h1>ACADEMIC STAFF UNION OF POLYTECHNICS</h1>-->
+               <nav>
+                    <ul>
+                         <li><a href="index.html">Home</a></li>
+                         <li><a href="about.html">About</a></li>
+                         <li><a href="events.html">Events</a></li>
+                         <li><a href="contact.html">Contact</a></li>
+                    </ul>
+               </nav>
+          </div>
+          <hr class="header-line">
+     </header>
+     <main>
+          <article>
+                    <div class="login">
+                         <a href="login.html">
+                              <button class="btn btn-success">Admin login</button>
+                         </a>
+                    </div>
+               <div class="foo-container">
+                    <div class="min-container">
+                              <h2>ASUP FPOG BONNY  MEMBERS</h2>
+                              <h3>Login</h3><hr>
+                                   <form action="" id="my-form">
+                                        <div class="msg"></div>
+                                        <div class="success"></div>
+                                        <input type="email" class="form-control" id="email" placeholder="Email">
+                                        <input type="password" class="form-control" id="password" placeholder="Password">
+                                        <button type="submit" class="btn btn-success" id="submit">Login</button>
+                                   </form>
+                       </div>
+               </div>
+          </article>
+     </main>
+     <footer>
+          <hr>
+          <p>&copy; Copyright ASUP FPOG Bonny Chapter 2022 - All rights reserved</p>
+          <small><p>Developed by <a href="https://ka-media.github.io/me-web/index.html" target="_blank" rel="noopener noreferrer">Kamel</a></p></small>
+     </footer>
+
+     <script type="module">
+   
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+          import { getDatabase, ref, update} from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
+          
+          import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
+          
+          const firebaseConfig = {
+          apiKey: "AIzaSyCS7y8LT91DUWGBnqUMxmKQvx5P9j8kBnE",
+          authDomain: "asup-web.firebaseapp.com",
+          projectId: "asup-web",
+          storageBucket: "asup-web.appspot.com",
+          messagingSenderId: "887415144657",
+          appId: "1:887415144657:web:ae57eb60e66e528a8545f0"
+          };
+        
+          // Initialize Firebase
+          const app = initializeApp(firebaseConfig);
+          //const analytics = getAnalytics(app);
+          const database = getDatabase(app);
+          const auth = getAuth();
+
+          //const analytics = getAnalytics(app);*/
+
+          const myForm = document.querySelector('#my-form');
+          const emailInput = document.querySelector('#email');
+          const passwordInput = document.querySelector('#password');
+          const msg = document.querySelector('.msg');
+          const msg2 = document.querySelector('.success');
+
+          myForm.addEventListener('submit', onSubmit);
+          function onSubmit(e) {
+               e.preventDefault();
+               if(emailInput.value === '' || passwordInput.value === '') {
+                    msg.innerHTML = 'Please enter all fields!';
+                    setTimeout(() => msg.remove(), 3000);
+               } 
+               
+               else {
+                    const emailInput = document.getElementById('email').value;
+                    const passwordInput = document.getElementById('password').value;
+                    const dt = new Date();
+                   
+                    signInWithEmailAndPassword(auth, emailInput, passwordInput)
+                    .then((userCredential) => {
+                         // Signed in 
+                         const user = userCredential.user;
+                              update(ref(database, 'members/'), {
+                                   email: emailInput,
+                                   lastLogin: dt.toString()
+                              });
+                              msg2.innerHTML = 'User logged in!';
+                              setTimeout(() => msg.remove(), 3000);
+                    })
+                    .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+
+                    msg.innerHTML = errorMessage;
+                    setTimeout(() => msg.remove(), 3000);
+                   }); 
+               }
+          }
+
+          /*firebase.auth().onAuthStateChaged(function(user) {
+               if(user) {
+                    window.location.href = 'members.html';
+               }
+          });*/
+        </script>
+</body>
+</html>
