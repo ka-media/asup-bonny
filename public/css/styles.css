@@ -72,13 +72,13 @@ nav > ul > li {
 
 main {
      display: block;
-     padding-top: 2em;
+     padding-top: 1em;
      padding-bottom: 3em;
      min-height: 85%;
 }
 
 article {
-     padding: 0em;
+     padding: 0.5em;
      width: 100%;
 }
 
@@ -92,6 +92,11 @@ article p {
 }
 
 /* Carousel Styles*/
+
+#welcomeCarousel {
+     z-index: 0;
+     margin-top: 3em;
+}
 
 .carousel-caption {
      bottom: 3rem;
@@ -120,26 +125,25 @@ article p {
      background-size: cover;
      background-position: center center;
      background-repeat: no-repeat;
-}
-
-#welcomeCarousel {
-     z-index: 0;
-     margin-top: 5em;
+     animation-name: carousel;
+     animation-timing-function: ease-in-out;
+     animation-iteration-count: infinite;
+     animation-duration: 20s;
 }
 
 .welcome-carousel-image1 {
      box-shadow: inset 0 0 100vw rgba(0, 0, 0, 0.3);
-     background-image: url('public/img/asupexco.jpg');
+     background-image: url('../public/img/asupexco.jpg');
 }
 
 .welcome-carousel-image2 {
      box-shadow: inset 0 0 100vw rgba(0, 0, 0, 0.3);
-     background-image: url('public/img/asupman.jpg');
+     background-image: url('../public/img/asupman.jpg');
 }
 
 .welcome-carousel-image3 {
      box-shadow: inset 0 0 100vw rgba(0, 0, 0, 0.3);
-     background-image: url('public/img/asupgov.jpg');
+     background-image: url('../public/img/asupgov.jpg');
 }
 
 /* Carousel Style End */
@@ -220,7 +224,7 @@ h3 {
      padding: 10px;
 }
 
-/* Executive About Page */
+/* Executive about page */
 .profile-container {
      margin: 1em; 
      margin-top: 0em;
