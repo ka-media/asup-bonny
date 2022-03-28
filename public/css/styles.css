@@ -72,13 +72,13 @@ nav > ul > li {
 
 main {
      display: block;
-     padding-top: 2em;
+     padding-top: 1em;
      padding-bottom: 3em;
      min-height: 85%;
 }
 
 article {
-     padding: 0em;
+     padding: 0.5em;
      width: 100%;
 }
 
@@ -86,7 +86,7 @@ article img {
      width: 100%;
 }
 
-article p { 
+article, .short-msg, #see-more-detail p { 
      text-align: justify;  
      margin: 0.5em 0 0.5em 0;
 }
@@ -110,7 +110,6 @@ article p {
 .carousel-caption p {
      color: var(--white);
      margin: 0.5em 0 0.5em 0;
-     text-align: center;
      text-shadow: 1px 3px 1px var(--black1);
 }
 
@@ -129,17 +128,17 @@ article p {
 
 .welcome-carousel-image1 {
      box-shadow: inset 0 0 100vw rgba(0, 0, 0, 0.3);
-     background-image: url('public/img/asupexco.jpg');
+     background-image: url('../img/asupman.jpg');
 }
 
 .welcome-carousel-image2 {
      box-shadow: inset 0 0 100vw rgba(0, 0, 0, 0.3);
-     background-image: url('public/img/asupman.jpg');
+     background-image: url('../img/asupexco.jpg');
 }
 
 .welcome-carousel-image3 {
      box-shadow: inset 0 0 100vw rgba(0, 0, 0, 0.3);
-     background-image: url('public/img/asupgov.jpg');
+     background-image: url('../img/asupmet.jpg');
 }
 
 /* Carousel Style End */
@@ -220,7 +219,7 @@ h3 {
      padding: 10px;
 }
 
-/* Executive About Page */
+/* Executive about page */
 .profile-container {
      margin: 1em; 
      margin-top: 0em;
