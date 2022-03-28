@@ -93,6 +93,11 @@ article, .short-msg, #see-more-detail p {
 
 /* Carousel Styles*/
 
+#welcomeCarousel {
+     z-index: 0;
+     margin-top: 3em;
+}
+
 .carousel-caption {
      bottom: 3rem;
      z-index: 10;
@@ -119,11 +124,10 @@ article, .short-msg, #see-more-detail p {
      background-size: cover;
      background-position: center center;
      background-repeat: no-repeat;
-}
-
-#welcomeCarousel {
-     z-index: 0;
-     margin-top: 5em;
+     animation-name: carousel;
+     animation-timing-function: ease-in-out;
+     animation-iteration-count: infinite;
+     animation-duration: 20s;
 }
 
 .welcome-carousel-image1 {
