@@ -123,7 +123,7 @@ article, .short-msg, #see-more-detail p {
 
 #welcomeCarousel {
      z-index: 0;
-     margin-top: 5em;
+     margin-top: 2em;
 }
 
 .welcome-carousel-image1 {
@@ -157,16 +157,6 @@ h2 {
 .author {
      text-decoration: none;
 }
-
-.potrait img {
-     display: block;
-     width: 50%;
-     margin-left: 23%;
-     margin-top: 5em;
-     margin-bottom: 0;
-     border-radius: 50%;
-     box-shadow: 1px 1px 20px 1px;
-} 
 
 h3 {
     color: #a52a2a;
@@ -231,9 +221,9 @@ h3 {
 
 .profile-image-wrapper {
      float: left; 
-     width: 25%; 
-     margin: 10px;
-     box-shadow: 1px 1px 2px 1px #000;
+     width: 40%; 
+     margin-right: 20px;
+     box-shadow: 1px 1px 5px 1px #000;
 }
 
 .profile-title p, .link-link {
@@ -324,6 +314,11 @@ footer p, hr {
 }
 
 @media screen and (min-width: 678px) {
+     #welcomeCarousel {
+          z-index: 0;
+          margin-top: 2em;
+     }
+
      .carousel-caption h1 {
           width: 100%;
           margin-top: 1em;
