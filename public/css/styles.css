@@ -267,6 +267,21 @@ button {
      margin-top: 1em;
 }
 
+.like {
+     cursor: pointer;
+     color: #f30b2a;
+     width: 5em;
+     border-radius: 50%;
+}
+
+.likeAddBox li {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     margin-top: 2em;
+     list-style-type: none;
+}
+
 .log-container button {
      margin-top: 5em;
      margin-bottom: 3em;
@@ -276,20 +291,20 @@ button {
      background-color: #f82a0f;
      font-size: 1.2em;
      color: #fff;
-     width: 50%;
-     margin-left: 25%;
+     width: 100%;
      margin-bottom: 5px;
      text-align: center;
+     border-radius: 5px;
 }
 
 .success {
      background-color: #10dd76;
      font-size: 1.2em;
      color: #fff;
-     width: 50%;
-     margin-left: 25%;
+     width: 100%;
      margin-bottom: 5px;
      text-align: center;
+     border-radius: 5px;
 }
 
 .link-link {
